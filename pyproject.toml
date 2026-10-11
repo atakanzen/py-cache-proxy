@@ -1,0 +1,7 @@
+[project]
+name = "cache-proxy"
+version = "0.1.0"
+requires-python = ">=3.15.0"
+
+[project.scripts]
+cache-proxy = "cache_proxy.cli:main"
