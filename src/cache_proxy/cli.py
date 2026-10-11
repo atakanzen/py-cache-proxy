@@ -3,7 +3,7 @@ from pathlib import Path
 
 
 from cache_proxy.server import start_proxy_server
-from cache_proxy.validation import port_number
+from cache_proxy.validation import origin, port_number
 from cache_proxy.cache import clear_cache, ensure_cache_dir
 
 
@@ -20,7 +20,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--origin",
-        type=str,
+        type=origin,
         help="The URL of the upstream server which the requests will be forwarded",
     )
 

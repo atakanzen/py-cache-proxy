@@ -10,4 +10,9 @@ def start_proxy_server(port: int, origin: str):
 
     httpd = HTTPServer(server_address, handler)
     print(f"Proxy server started listening on port {httpd.server_port}")
-    httpd.serve_forever()
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\nShutting down...")
+    finally:
+        httpd.server_close()
